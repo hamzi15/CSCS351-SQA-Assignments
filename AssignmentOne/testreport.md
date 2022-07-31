@@ -24,14 +24,20 @@ The objective of the test is functional testing of the 5 functions.
 
 ### Add unit test cases: All Passed ✅
 <img width="515" alt="Screen Shot 2022-07-31 at 11 45 49 PM" src="https://user-images.githubusercontent.com/66818162/182040935-e54605d2-693c-41a7-a8b9-34d04c9cc335.png">
+
 ### Sub unit test cases: All Passed ✅
 <img width="515" alt="Screen Shot 2022-07-31 at 11 45 55 PM" src="https://user-images.githubusercontent.com/66818162/182040939-d3f7df60-bfab-49d7-a80a-8bcfece62501.png">
+
 ### Square unit test cases: All Passed ✅
 <img width="515" alt="Screen Shot 2022-07-31 at 11 46 00 PM" src="https://user-images.githubusercontent.com/66818162/182040953-e88d608b-c512-43b5-b32a-3fcbe9f4227c.png">
+
 ### Rectangular Area test cases: All Passed ✅
 <img width="515" alt="Screen Shot 2022-07-31 at 11 46 23 PM" src="https://user-images.githubusercontent.com/66818162/182040955-ee9f1afb-66b5-4a1a-9fe0-56e5dfd7ce4c.png">
+
 ### Rectangular Perimeter test cases: All Passed ✅
 <img width="515" alt="Screen Shot 2022-07-31 at 11 46 34 PM" src="https://user-images.githubusercontent.com/66818162/182040957-25f60fad-a2bc-436e-979d-12492b2a96d8.png">
+
+### Entire Test Suite: All Passed ✅
 <img width="515" alt="Screen Shot 2022-07-31 at 11 46 46 PM" src="https://user-images.githubusercontent.com/66818162/182040962-ed670d18-18e8-41e0-b234-b11bdee21ffc.png">
 
 No defects were found in any function.
