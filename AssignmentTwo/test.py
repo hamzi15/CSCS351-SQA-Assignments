@@ -2,44 +2,57 @@
 # 'pip install selenium' selenium for python
 # 'pip install selenium-wire' an extension for selenium to intercept browser api calls
 # 'pip install webdriver_manager' webdriver_manager to automatically install chrome driver at run time
-import time 
 from seleniumwire import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+import unittest
 
-# installs the chrome driver automatically at run time using webdriver_manager
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# unittest.TestLoader.sortTestMethodsUsing = None
 
-# opens google on the browser
-driver.get("https://www.google.com")
 
-# finds the google search form and enters "selenium wire" into it
-search = driver.find_elements(By.CLASS_NAME,'gLFyf')
-search = search[0]
-search.send_keys('selenium wire')
-search.submit()
+class SeleniumUnitTest(unittest.TestCase):
 
-# waits for the page to load by one second
-time.sleep(1)
+    def setUp(self):
+        # installs the chrome driver automatically at run time using webdriver_manager
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-# finds the first few results and outputs them to the console
-# results = driver.find_elements(By.XPATH, ".//*[@id='rso']//div//h3/a")
-# for result in results:
-#     print(result.get_attribute("href"))
+    def test_google_search(self):
+        driver = self.driver
 
-# time.sleep(1)
+        # opens google on the browser
+        driver.get("https://www.google.com")
 
-# prints all API calls made by the browser
-print("-------------------API Testing-------------------")
-for request in driver.requests:
-     if request.response:
-        print(
-            request.method,
-            request.host,
-            request.response.status_code,
-            request.response.date
-        )
-time.sleep(1)
-driver.close()
+        # finds the google search form and enters "selenium wire" into it
+        search = driver.find_elements(By.CLASS_NAME,'gLFyf')
+        search = search[0]
+        search.send_keys('selenium wire')
+        search.submit()
+        self.assertNotIn("No results found.", driver.page_source)
+
+    def test_api_calls(self):
+        driver = self.driver
+
+        # opens google on the browser
+        driver.get("https://www.google.com")
+
+        print()
+        # prints all API calls made by the browser
+        for request in driver.requests:
+            if request.response:
+                print("Request Method:", request.method)
+                print("Request Host:", request.host)
+                print("Request Status Code:", request.response.status_code)
+                print("Request Time Stamp:", request.response.date)
+        print()
+
+           
+    def tearDown(self):
+        self.driver.close()
+
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 
