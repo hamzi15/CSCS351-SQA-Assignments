@@ -11,8 +11,8 @@ Our objective is to test selenium functionality and test browser API calls using
 
 ## Test Cases
 There are two test cases:
-1. ```test_google_search``` the code opens google finds the search box element and types in: ```selenium wire``` and submits the value. With ```self.assertNotIn("No results found.", driver.page_source)``` check whether there is a succesfully found result.
-2. ```test_api_calls``` runs the browser and opens www.google.com and prints out all the requests made by the site.
+1. ```test_google_search``` the code opens google finds the search box element and types in: ```selenium wire``` and submits the value.<br>With ```self.assertNotIn("No results found.", driver.page_source)``` assertion we check whether google successfully found a result.
+3. ```test_api_calls``` runs the browser and opens www.google.com and prints out all the requests made by the site.
 
 ## Output Screenshots
 
