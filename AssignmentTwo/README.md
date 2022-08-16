@@ -7,7 +7,7 @@ Our objective is to test selenium functionality and test browser API calls using
 ## Configuration 
 - ```selenium``` installed using the command ```pip install selenium```
 - ```selenium wire``` an extension on selenium which enables us to catch browser API requests ```pip install selenium-wire```
-- ```webdriver_manager``` a dependency which automatcially installs the browser driver in our case the ```Chrome``` web driver at runtime.
+- ```webdriver_manager``` a dependency which automatcially installs the browser driver in our case the ```Chrome``` web driver at runtime ```pip install webdriver_manager```.
 
 ## Test Cases
 There are two test cases:
